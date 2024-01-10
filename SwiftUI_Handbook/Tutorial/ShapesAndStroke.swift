@@ -9,25 +9,45 @@ import SwiftUI
 
 struct ShapesAndStroke: View {
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color.blue)
-                .ignoresSafeArea()
-
-            VStack {
+        VStack {
+            HStack {
+                Rectangle()
+                    .stroke(Color.black, lineWidth: 2)
+                    .frame(width: 44, height: 44)
                 Circle()
                     .stroke(Color.black, lineWidth: 2)
                     .frame(width: 44, height: 44)
-                Text("Hello World!").bold()
-                Capsule()
-                    .foregroundColor(Color.green)
+                Ellipse()
+                    .stroke(Color.black, lineWidth: 2)
+                    .frame(width: 44, height: 88)
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(Color.black, lineWidth: 2)
                     .frame(height: 44)
-                    .overlay(Text("Second Line"))
+                Capsule()
+                    .stroke(Color.black, lineWidth: 2)
+                    .frame(height: 44)
             }
-            .padding()
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
-            .padding()
+
+            ZStack {
+                Rectangle()
+                    .fill(Color.blue)
+                    .ignoresSafeArea()
+
+                VStack {
+                    Circle()
+                        .stroke(Color.black, lineWidth: 2)
+                        .frame(width: 44, height: 44)
+                    Text("Hello World!").bold()
+                    Capsule()
+                        .foregroundColor(Color.green)
+                        .frame(height: 44)
+                        .overlay(Text("Second Line"))
+                }
+                .padding()
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
+                .padding()
+            }
         }
     }
 }
