@@ -11,7 +11,7 @@ struct StacksAndSpacer: View {
     var body: some View {
         VStack {
             
-            // MARK: VStack and Spacer
+            // VStack and Spacer
             VStack(alignment: .leading, spacing: 16) {
                 Text("Hello World!")
                     .font(.title)
@@ -20,7 +20,7 @@ struct StacksAndSpacer: View {
             }
             .padding()
             
-            // MARK: HStack and Spacer
+            // HStack and Spacer
             HStack(alignment: .bottom, spacing: 16) {
                 Text("Hello World!")
                     .font(.title)
@@ -30,7 +30,7 @@ struct StacksAndSpacer: View {
             .padding()
             .frame(width: 320)
             
-            // MARK: ZStack and Spacer
+            // ZStack and Spacer
             ZStack(alignment: .center) {
                 Rectangle()
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
